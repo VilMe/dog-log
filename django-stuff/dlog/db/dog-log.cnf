@@ -1,0 +1,6 @@
+[client]
+
+database = <NAME> --need to create DB
+user = <USER> --need to create dog-log user
+password = <PASSWORD> --need to create passowrd for dog-log user
+default-character-set = utf8mb4
