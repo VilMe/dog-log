@@ -75,9 +75,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '../dlog/db/dog-log.cnf',
-        },
+        'USER': 'dog_logs',
+        'NAME': 'dj_dog_log',
+        'PASSWORD': 'os.environ["DJ_DOG_LOG_DBUSER_PASSWORD"]',
+        'DEFAULT-CHARACTER-SET': 'utf8mb4',
     }
 }
 

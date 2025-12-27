@@ -1,6 +1,6 @@
 [client]
 
 database = dog_logs
-user = dj_dog_log 
+user = dj_dog_log@localhost
 password = os.environ['DJ_DOG_LOG_DBUSER_PASSWORD']
 default-character-set = utf8mb4
