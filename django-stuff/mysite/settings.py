@@ -75,10 +75,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'USER': 'dog_logs',
-        'NAME': 'dj_dog_log',
-        'PASSWORD': 'os.environ["DJ_DOG_LOG_DBUSER_PASSWORD"]',
+        'USER': 'dj_dog_log',
+        'NAME': 'dog_logs',
+        'PASSWORD': os.environ['DJ_DOG_LOG_DBUSER_PASSWORD'],
         'DEFAULT-CHARACTER-SET': 'utf8mb4',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
