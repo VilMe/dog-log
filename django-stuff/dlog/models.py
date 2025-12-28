@@ -8,5 +8,6 @@ class FoodAmount(models.Model):
 # Notes and observations
 
 class Observation(models.Model):
+    note_weight_date = models.ForeignKey(FoodAmount, on_delete=models.CASCADE)
     weight = models.IntegerField()
     note = models.TextField()
