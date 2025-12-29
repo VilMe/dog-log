@@ -7,7 +7,7 @@ class FoodAmount(models.Model):
 
 
     def __str__(self):
-        return self.feed_date, self.cups_of_kibble
+        return f'{self.feed_date} {self.cups_of_kibble} cups'
 
 # Notes and observations
 
@@ -18,4 +18,4 @@ class Observation(models.Model):
 
 
     def __str__(self):
-        return self.weight, self.note
+        return f'{self.weight} lbs'
