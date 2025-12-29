@@ -18,4 +18,4 @@ class Observation(models.Model):
 
 
     def __str__(self):
-        return f'{self.weight} lbs'
+        return f'{self.weight} lbs and/or notes for this day: {self.note}'
