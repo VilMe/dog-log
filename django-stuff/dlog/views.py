@@ -1,8 +1,11 @@
 from django.http import HttpResponse
 
+from .models import FoodAmount
 
 def index(request):
-    return HttpResponse("Hello, world. You're at my dog log index. WOOOOOOT!")
+    latest_food_amounts_list = FoodAmount.objects.order_by("-feed_date")[:5]
+    output = ", ".join([f.cups_of_kibble for f in latest_food_amounts_list])
+    return HttpResponse(output)
 
 
 def detail(request):
