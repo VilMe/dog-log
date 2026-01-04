@@ -1,5 +1,6 @@
 .DS_Store
 django-stuff/dlog/db/notes-creating-db.txt
+migrations/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
