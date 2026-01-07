@@ -5,6 +5,13 @@
     <title>Dog Log Index page</title>
   </head>
   <body>
+    <table summary="keeping-track-of-dog">
+      <tr>
+        <th>Date</th>
+        <th>Amount of kibble for day - cups</th>
+        <th>Weight - lbs</th>
+        <th>Notes</th>
+      </tr>
     {% if latest_food_amounts_list %}
         <ul>
         {% for amount in latest_food_amounts_list %}
@@ -14,5 +21,6 @@
     {% else %}
         <p>No entries available</p>
     {% endif %}
+    </table>
   </body>
 </html>
