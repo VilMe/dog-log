@@ -13,14 +13,15 @@
         <th>Notes</th>
       </tr>
     {% if latest_food_amounts_list %}
-        <tr>
+        
         {% for amount in latest_food_amounts_list %}
+          <tr>
             <td>{{ amount.feed_date }}</td>
             <td>{{ amount.cups_of_kibble}}</td>
             <td>todo</td>
             <td>todo</td>
+           </tr>
         {% endfor %}
-        </tr>
     {% else %}
         <p>No entries available</p>
     {% endif %}
