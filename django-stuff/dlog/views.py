@@ -10,7 +10,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def detail(request):
+def form(request):
     return HttpResponse("You're looking at dog log form")
 
 
