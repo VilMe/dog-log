@@ -11,7 +11,8 @@ def index(request):
 
 
 def form(request):
-    return HttpResponse("You're looking at dog log form")
+    template = loader.get_template("dlog/form.html")
+    return HttpResponse(template.render())
 
 
 def results(request):
