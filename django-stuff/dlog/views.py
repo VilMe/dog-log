@@ -15,6 +15,7 @@ def form(request):
     return HttpResponse(template.render())
 
 
-def results(request):
-    return HttpResponse("You're looking at dog log results table ")
+def record(request):
+
+    return HttpResponse("You're looking at dog log record function")
 
