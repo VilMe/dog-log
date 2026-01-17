@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 
-from .models import FoodAmount
+from .models import FoodAmount,Observation
 
 def index(request):
     latest_food_amounts_list = FoodAmount.objects.order_by("-feed_date")[:5]
@@ -16,6 +16,8 @@ def form(request):
 
 
 def record(request):
-
+    if request.method == "POST":
+        feed_date = request.POST.get('feed_date')
+        cups_of_kibble = request.POST.get('cups_of_kibble')
     return HttpResponse("You're looking at dog log record function")
 
