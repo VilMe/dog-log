@@ -8,5 +8,5 @@ urlpatterns: list = [
     path("", views.index, name="index"), 
     # ex: /dlog/form
     path("form/", views.form, name="form"),
-    path("results/", views.results, name="results"),
+    path("record/", views.record, name="record"),
 ]
