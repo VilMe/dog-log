@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 
 from .models import FoodAmount,Observation
@@ -19,5 +19,7 @@ def record(request):
     if request.method == "POST":
         feed_date = request.POST.get('feed_date')
         cups_of_kibble = request.POST.get('cups_of_kibble')
-    return HttpResponse("You're looking at dog log record function")
+        feed_info = FoodAmount(feed_date=feed_date, cups_of_kibble=cups_of_kibble)
+        feed_info.save
+    return HttpResponseRedirect("You're looking at dog log record function")
 
