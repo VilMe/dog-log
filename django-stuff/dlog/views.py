@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+from django.shortcuts import get_object_or_404, render
 
 from .models import FoodAmount,Observation
 
@@ -21,5 +22,5 @@ def record(request):
         cups_of_kibble = request.POST.get('cups_of_kibble')
         feed_info = FoodAmount(feed_date=feed_date, cups_of_kibble=cups_of_kibble)
         feed_info.save
-    return HttpResponseRedirect("You're looking at dog log record function")
+    return render(request, "You're looking at dog log record function")
 

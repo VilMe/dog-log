@@ -5,11 +5,10 @@
     <title>Dog Log Form page</title>
   </head>
   <body>
-    <form action="{% url 'dlog:record'  %}" method="post">
-    {% csrf_token %}
     <fieldset>
-        <legend><h1>Enter Goose Information Please</h1></legend>
-        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      <legend><h1>Enter Goose Information Please</h1></legend>
+      <form action="{% url 'dlog:record'  %}" method="post">{% csrf_token %}
+        <!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %} -->
         <label for="feed_date">Feed Date(optional):</label>
         <input type="date" id="feed_date" value="feed_date"> 
         <label for="cups_of_kibble">How much kibble did little Goose eat?</label>
@@ -20,8 +19,8 @@
         <textarea id="notes" type="text" value="notes" rows="4" cols="50">
         Any special treats? Any digestive issues? Poop descriptions to note? Any meds given? 
         </textarea>
+        <input type="submit" value="Record">
+      </form>
     </fieldset>
-    <input type="submit" value="Record">
-    </form>
   </body>
 </html>
