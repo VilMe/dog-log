@@ -7,7 +7,8 @@
   <body>
     <fieldset>
       <legend><h1>Enter Goose Information Please</h1></legend>
-      <form action="{% url 'dlog:record'  %}" method="post">{% csrf_token %}
+      <form action="{% url 'dlog:record'  %}" method="post">
+        {% csrf_token %}
         <!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %} -->
         <label for="feed_date">Feed Date(optional):</label>
         <input type="date" id="feed_date" value="feed_date"> 

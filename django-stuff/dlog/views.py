@@ -18,8 +18,8 @@ def form(request):
 
 def record(request):
     if request.method == "POST":
-        feed_date = request.POST.get('feed_date')
-        cups_of_kibble = request.POST.get('cups_of_kibble')
+        feed_date = request.POST('feed_date')
+        cups_of_kibble = request.POST('cups_of_kibble')
         feed_info = FoodAmount(feed_date=feed_date, cups_of_kibble=cups_of_kibble)
         feed_info.save
     return render(request, "You're looking at dog log record function")
