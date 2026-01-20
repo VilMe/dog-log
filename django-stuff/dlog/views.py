@@ -13,6 +13,12 @@ def index(request):
 
 def form(request):
     template = loader.get_template("dlog/form.html")
+    if request.method == "POST":
+        feed_date = request.POST('feed_date')
+        cups_of_kibble = request.POST('cups_of_kibble')
+        feed_info = FoodAmount(feed_date=feed_date, cups_of_kibble=cups_of_kibble)
+        feed_info.save
+        return HttpResponseRedirect(request, "You're looking at dog log record function")
     return HttpResponse(template.render())
 
 
