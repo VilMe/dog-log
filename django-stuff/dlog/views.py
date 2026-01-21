@@ -13,7 +13,7 @@ def index(request):
 
 def form(request):
     template = loader.get_template("dlog/form.html")
-    return HttpResponse(template.render())
+    return render(request, "dlog/form.html")
 
 
 def record(request):
@@ -21,5 +21,5 @@ def record(request):
     cups_of_kibble = request.POST('cups_of_kibble')
     feed_info = FoodAmount(feed_date=feed_date, cups_of_kibble=cups_of_kibble)
     feed_info.save
-    return render(request, "dlog/form.html")
+    return HttpResponseRedirect("You have submitted data, woohoo!!")
 
