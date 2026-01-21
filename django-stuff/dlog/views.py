@@ -18,9 +18,19 @@ def form(request):
 
 
 def record(request):
-    feed_date = request.POST.get('feed_date')
+    feed_date = request.POST['feed_date']
+    print("*" * 10)
+    print(feed_date)
+    print("*" * 10)
     cups_of_kibble = request.POST.get('cups_of_kibble')
+    print("/" * 10)
+    print(cups_of_kibble)
+    print("/" * 10)
     feed_info = FoodAmount(feed_date=feed_date, cups_of_kibble=cups_of_kibble)
-    feed_info.save
+    print("0" * 10)
+    print(feed_info)
+    print("0" * 10)
+    feed_info.save()
+    
     return HttpResponseRedirect("/dlog/")
 
