@@ -19,18 +19,28 @@ def form(request):
 
 def record(request):
     feed_date = request.POST['feed_date']
-    print("*" * 10)
-    print(feed_date)
-    print("*" * 10)
+    # print("*" * 10)
+    # print(feed_date)
+    # print("*" * 10)
     cups_of_kibble = request.POST.get('cups_of_kibble')
-    print("/" * 10)
-    print(cups_of_kibble)
-    print("/" * 10)
-    feed_info = FoodAmount(feed_date=feed_date, cups_of_kibble=cups_of_kibble)
-    print("0" * 10)
-    print(feed_info)
-    print("0" * 10)
+    # print("/" * 10)
+    # print(cups_of_kibble)
+    # print("/" * 10)
+    feed_info = FoodAmount(
+        feed_date=feed_date, 
+        cups_of_kibble=cups_of_kibble
+    )
+    # print("0" * 10)
+    # print(feed_info)
+    # print("0" * 10)
+    weight = request.POST.get('weight')
+    notes = request.POST.get('notes')
     feed_info.save()
+    feed_info.observation_set.create(
+        weight=weight,
+        notes=notes
+    )
+
     
     return HttpResponseRedirect("/dlog/")
 
