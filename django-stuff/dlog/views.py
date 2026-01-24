@@ -34,11 +34,11 @@ def record(request):
     # print(feed_info)
     # print("0" * 10)
     weight = request.POST.get('weight')
-    notes = request.POST.get('notes')
+    note = request.POST.get('notes')
     feed_info.save()
     feed_info.observation_set.create(
         weight=weight,
-        notes=notes
+        note=note
     )
 
     
