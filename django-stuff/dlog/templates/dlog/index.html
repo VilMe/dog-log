@@ -18,8 +18,8 @@
           <tr>
             <td>{{ amount.feed_date }}</td>
             <td>{{ amount.cups_of_kibble }}</td>
-            <td>{{ amount.weight }}</td>
-            <td>{{ amount.note }}</td>
+            <td>{{ amount.observation_set.weight }}</td>
+            <td>{{ amount.observation_set.note }}</td>
            </tr>
         {% endfor %}
     {% else %}

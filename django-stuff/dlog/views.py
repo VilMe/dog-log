@@ -23,18 +23,12 @@ def record(request):
     # print(feed_date)
     # print("*" * 10)
     cups_of_kibble = request.POST.get('cups_of_kibble')
-    # print("/" * 10)
-    # print(cups_of_kibble)
-    # print("/" * 10)
     feed_info = FoodAmount(
         feed_date=feed_date, 
         cups_of_kibble=cups_of_kibble
     )
-    # print("0" * 10)
-    # print(feed_info)
-    # print("0" * 10)
     weight = request.POST.get('weight')
-    note = request.POST.get('notes')
+    note = request.POST.get('note')
     feed_info.save()
     feed_info.observation_set.create(
         weight=weight,
