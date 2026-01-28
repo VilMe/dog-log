@@ -14,8 +14,10 @@
         
         {% for amount in latest_food_amounts_list %}
           <tr>
-            <td>{{ amount.feed_date }}</td>
-            <td>{{ amount.cups_of_kibble }}</td>
+            <a href="details/"">
+              <td>{{ amount.feed_date }}</td>
+              <td>{{ amount.cups_of_kibble }}</td>
+            </a>
            </tr>
         {% endfor %}
     {% else %}
