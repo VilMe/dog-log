@@ -9,8 +9,6 @@
       <tr>
         <th>Date</th>
         <th>Amount of kibble for day - cups</th>
-        <th>Weight - lbs</th>
-        <th>Notes</th>
       </tr>
     {% if latest_food_amounts_list %}
         
@@ -18,8 +16,6 @@
           <tr>
             <td>{{ amount.feed_date }}</td>
             <td>{{ amount.cups_of_kibble }}</td>
-            <td>{{ amount.observation_set.weight }}</td>
-            <td>{{ amount.observation_set.note }}</td>
            </tr>
         {% endfor %}
     {% else %}
