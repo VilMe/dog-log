@@ -7,6 +7,13 @@ from .models import FoodAmount,Observation
 
 def index(request):
     latest_food_amounts_list = FoodAmount.objects.order_by("-feed_date")[:5]
+    # get observations, notes and weight
+    try: 
+        latest_food_amounts_list.observation_set.all()
+
+    except Observation.DoesNotExist:
+        
+
     template = loader.get_template("dlog/index.html")
     context = {"latest_food_amounts_list": latest_food_amounts_list}
     return HttpResponse(template.render(context, request))
