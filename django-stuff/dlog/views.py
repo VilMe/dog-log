@@ -7,7 +7,8 @@ from .models import FoodAmount,Observation
 
 def index(request):
     latest_food_amounts_list = FoodAmount.objects.order_by("-feed_date")[:5]
-    # get observations, notes and weight
+    # chech if observations, notes and weight exist the create a link to object in 
+    # able if not then leave object and just show feed date and amoont
     if latest_food_amounts_list.observation_set.exists():
         observations = latest_food_amounts_list.observation_set.all()
 
