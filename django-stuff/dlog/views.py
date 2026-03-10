@@ -13,7 +13,7 @@ def index(request):
         observations = latest_food_amounts_list.observation_set.all()
 
     template = loader.get_template("dlog/index.html")
-    context = {"latest_food_amounts_list": latest_food_amounts_list}
+    context = {"latest_food_amounts_list": latest_food_amounts_list, "obesrvations": observations}
     return HttpResponse(template.render(context, request))
 
 

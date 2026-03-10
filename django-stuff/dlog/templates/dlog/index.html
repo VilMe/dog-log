@@ -10,7 +10,7 @@
         <th>Date</th>
         <th>Amount of kibble for day - cups</th>
       </tr>
-    {% if latest_food_amounts_list %}
+    {% if latest_food_amounts_list and observations %}
         
         {% for amount in latest_food_amounts_list %}
             <tr>
@@ -20,6 +20,11 @@
             <td>{{ amount.cups_of_kibble }}</td>
             </tr>
         {% endfor %}
+    {% elif latest_food_amounts_list %}
+     <tr>
+            <td>{{ amount.feed_date }}</td>
+            <td>{{ amount.cups_of_kibble }}</td>
+            </tr>
     {% else %}
         <p>No entries available</p>
     {% endif %}
