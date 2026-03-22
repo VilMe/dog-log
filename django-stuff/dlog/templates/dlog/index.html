@@ -10,21 +10,20 @@
         <th>Date</th>
         <th>Amount of kibble for day - cups</th>
       </tr>
-    {% if latest_food_amounts_list and observations %}
-        
+    {% if latest_food_amounts_list %}
         {% for amount in latest_food_amounts_list %}
             <tr>
-            <!-- # todo test if notes and weight exist if, if not then don't render as link, just as text, hmmm.... 
+            <!-- # todo test if notes and weight exist, if not then don't render as link, just as text, hmmm.... 
              or just display on table and handle null values in model string return, hmmm...-->
             <td><a href="/details/">{{ amount.feed_date }}</a></td>
             <td>{{ amount.cups_of_kibble }}</td>
             </tr>
         {% endfor %}
-    {% elif latest_food_amounts_list %}
+    <!-- {% elif latest_food_amounts_list %}
      <tr>
             <td>{{ amount.feed_date }}</td>
             <td>{{ amount.cups_of_kibble }}</td>
-            </tr>
+            </tr> -->
     {% else %}
         <p>No entries available</p>
     {% endif %}

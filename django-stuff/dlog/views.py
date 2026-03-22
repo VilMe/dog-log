@@ -9,11 +9,11 @@ def index(request):
     latest_food_amounts_list = FoodAmount.objects.order_by("-feed_date")[:5]
     # chech if observations, notes and weight exist the create a link to object in 
     # able if not then leave object and just show feed date and amoont
-    if latest_food_amounts_list.observation_set.exists():
-        observations = latest_food_amounts_list.observation_set.all()
-
+    # if latest_food_amounts_list.observation_set.exists():
+    #     observations = latest_food_amounts_list.observation_set.all()
+    #     context = {"latest_food_amounts_list": latest_food_amounts_list, "obesrvations": observations}
     template = loader.get_template("dlog/index.html")
-    context = {"latest_food_amounts_list": latest_food_amounts_list, "obesrvations": observations}
+    context = {"latest_food_amounts_list": latest_food_amounts_list}
     return HttpResponse(template.render(context, request))
 
 
