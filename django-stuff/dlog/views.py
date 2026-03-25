@@ -43,3 +43,6 @@ def record(request):
     
     return HttpResponseRedirect("/dlog/")
 
+def detail(request):
+    # template = loader.get_template("dlog/form.html")
+    return render(request, "dlog/details.html")
