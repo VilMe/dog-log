@@ -9,4 +9,5 @@ urlpatterns: list = [
     # ex: /dlog/form
     path("form/", views.form, name="form"),
     path("record/", views.record, name="record"),
+    path("detail/", views.detail, name="detail")
 ]
